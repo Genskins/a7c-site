@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A7C · Tese</title>
+<meta name="description" content="A tese de investimento da A7C — em quem investimos e como investimos." />
+<link rel="stylesheet" href="assets/system.css" />
+</head>
+<body>
+
+<canvas id="celestial" aria-hidden="true"></canvas>
+
+<!-- NAV global -->
+<header class="nav" id="nav">
+  <a href="index.html" class="wordmark" aria-label="A7C — início">A7C</a>
+  <nav class="nav-center" aria-label="Navegação principal">
+    <ul class="nav-links">
+      <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="tese.html" class="is-active" data-i18n="nav.thesis">Tese</a></li>
+      <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+      <li><a href="manifesto.html" data-i18n="nav.manifesto">Manifesto</a></li>
+      <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Idioma"></div>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- SEÇÃO 1 — EM QUEM INVESTIMOS -->
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="tese.label">Tese</p>
+      <h1 class="display reveal s1-title" data-i18n="tese.s1.title">Em quem investimos</h1>
+      <p class="lead reveal s1-intro" data-i18n="tese.s1.intro">
+        Procuramos fundadores que pensam diferente — loucos o suficiente para mudar o mundo, maduros o bastante para conduzi-lo. Seis frentes de tese, uma só convicção: capital com alma.
+      </p>
+    </div>
+  </section>
+
+  <section class="cats">
+    <div class="wrap">
+      <p class="eyebrow section-kicker reveal" data-i18n="tese.s1.kicker">Seis categorias de tese</p>
+      <div class="cat-grid">
+
+        <article class="card reveal">
+          <span class="card-idx">01</span>
+          <span class="card-orb" aria-hidden="true"></span>
+          <h2 class="h2 card-title">Tech / Software</h2>
+          <p class="card-desc muted" data-i18n="cat.1.d">Telecom &amp; Cybersecurity — nosso maior volume histórico.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-idx">02</span>
+          <span class="card-orb" aria-hidden="true"></span>
+          <h2 class="h2 card-title">Crypto &amp; Web3</h2>
+          <p class="card-desc muted" data-i18n="cat.2.d">Ativos digitais, protocolos e blockchain com utilidade real.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-idx">03</span>
+          <span class="card-orb" aria-hidden="true"></span>
+          <h2 class="h2 card-title">AI</h2>
+          <p class="card-desc muted" data-i18n="cat.3.d">Modelos, aplicações verticais e infraestrutura de inteligência artificial.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-idx">04</span>
+          <span class="card-orb" aria-hidden="true"></span>
+          <h2 class="h2 card-title">Real Estate</h2>
+          <p class="card-desc muted" data-i18n="cat.4.d">Aquisição, desenvolvimento, retrofit e proptech.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-idx">05</span>
+          <span class="card-orb" aria-hidden="true"></span>
+          <h2 class="h2 card-title">Financial</h2>
+          <p class="card-desc muted" data-i18n="cat.5.d">Fintech, gestão de patrimônio e produtos para investidores.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-idx">06</span>
+          <span class="card-orb" aria-hidden="true"></span>
+          <h2 class="h2 card-title">Art &amp; Fun</h2>
+          <p class="card-desc muted" data-i18n="cat.6.d">Arte, cultura, entretenimento — obras como ativo.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2 — COMO INVESTIMOS -->
+  <section class="how">
+    <div class="wrap">
+      <div class="how-head">
+        <h2 class="h1 reveal" data-i18n="tese.s2.title">Como investimos</h2>
+        <p class="eyebrow reveal" data-i18n="tese.s2.kicker">Cinco critérios</p>
+      </div>
+
+      <ol class="crit-list">
+        <li class="crit reveal">
+          <span class="crit-num">01</span>
+          <div class="crit-body">
+            <h3 class="crit-title" data-i18n="crit.1.t">Skin in the game</h3>
+            <p class="crit-desc muted" data-i18n="crit.1.d">Risco partilhado. Quem conduz precisa ter algo em jogo.</p>
+          </div>
+        </li>
+        <li class="crit reveal">
+          <span class="crit-num">02</span>
+          <div class="crit-body">
+            <h3 class="crit-title" data-i18n="crit.2.t">Equilíbrio razão–emoção</h3>
+            <p class="crit-desc muted" data-i18n="crit.2.d">O rigor do número somado à convicção do instinto.</p>
+          </div>
+        </li>
+        <li class="crit reveal">
+          <span class="crit-num">03</span>
+          <div class="crit-body">
+            <h3 class="crit-title" data-i18n="crit.3.t">Visão de longo prazo</h3>
+            <p class="crit-desc muted" data-i18n="crit.3.d">Capital paciente. Pensamos em décadas, não em trimestres.</p>
+          </div>
+        </li>
+        <li class="crit reveal">
+          <span class="crit-num">04</span>
+          <div class="crit-body">
+            <h3 class="crit-title" data-i18n="crit.4.t">Alinhamento de propósito</h3>
+            <p class="crit-desc muted" data-i18n="crit.4.d">Investimos onde o propósito do fundador encontra o nosso.</p>
+          </div>
+        </li>
+        <li class="crit reveal">
+          <span class="crit-num">05</span>
+          <div class="crit-body">
+            <h3 class="crit-title" data-i18n="crit.5.t">Capital relacional ativo</h3>
+            <p class="crit-desc muted" data-i18n="crit.5.d">Mais que dinheiro: rede, conselho e presença ao longo da jornada.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PULL-QUOTE -->
+  <section class="pq">
+    <div class="wrap">
+      <span class="pq-mark reveal" aria-hidden="true"></span>
+      <blockquote class="pq-text reveal" data-i18n="tese.quote">
+        O fundador precisa ter investido em si mesmo antes de pedir que outros invistam nele.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA + RODAPÉ -->
+  <section class="end">
+    <div class="wrap">
+      <p class="reveal cta-wrap">
+        <a href="#" class="cta">
+          <span class="arrow">→</span>
+          <span data-i18n="tese.cta">Ver portfólio completo</span>
+        </a>
+      </p>
+
+      <footer class="foot">
+        <div class="dotline">
+          <span class="wordmark" style="font-size:.78rem">A7C</span>
+          <span class="dot">·</span><span>São Paulo</span>
+          <span class="dot">·</span><span>Milano</span>
+          <span class="dot">·</span><a href="mailto:contato@a7c.io">contato@a7c.io</a>
+        </div>
+        <div class="foot-meta">
+          <span data-i18n="foot.venus" class="muted">Vênus orbita ao contrário — assim como nós.</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<style>
+  .page-head {
+    padding-top: clamp(140px, 22vh, 240px);
+    padding-bottom: clamp(40px, 7vh, 90px);
+  }
+  .s1-title { margin-top: clamp(18px, 3vh, 32px); }
+  .s1-intro { margin-top: clamp(28px, 4vh, 44px); max-width: 52ch; }
+
+  .cats { padding-bottom: clamp(60px, 10vh, 130px); }
+  .section-kicker { margin: 0 0 clamp(28px, 4vh, 44px); }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray-3);   /* hairlines entre cards */
+    border: 1px solid var(--gray-3);
+  }
+  .card {
+    position: relative;
+    background: var(--black);
+    padding: clamp(28px, 3vw, 44px);
+    min-height: clamp(220px, 26vh, 280px);
+    display: flex;
+    flex-direction: column;
+    transition: background 0.55s var(--ease);
+    overflow: hidden;
+  }
+  .card:hover { background: #060606; }
+  .card-idx {
+    font-size: var(--label);
+    letter-spacing: 0.22em;
+    color: var(--gray-2);
+    font-weight: 500;
+  }
+  .card-title { margin-top: auto; padding-top: 48px; }
+  .card-desc { margin: 14px 0 0; max-width: 30ch; }
+
+  /* corpo celeste que orbita no canto do card no hover */
+  .card-orb {
+    position: absolute;
+    top: 26px; right: 28px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-2);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+  }
+  .card:hover .card-orb { opacity: 1; transform: scale(1); }
+  .card:hover .card-orb::after {
+    content: ""; position: absolute; inset: -7px;
+    border-radius: 50%; border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* SEÇÃO COMO INVESTIMOS */
+  .how { padding: clamp(40px, 8vh, 110px) 0 clamp(30px, 6vh, 80px); }
+  .how-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: clamp(24px, 4vh, 44px);
+    border-bottom: 1px solid var(--gray-3);
+  }
+  .crit-list { list-style: none; margin: 0; padding: 0; counter-reset: none; }
+  .crit {
+    display: grid;
+    grid-template-columns: clamp(64px, 9vw, 130px) 1fr;
+    gap: clamp(18px, 4vw, 56px);
+    align-items: baseline;
+    padding: clamp(26px, 4vh, 44px) 0;
+    border-bottom: 1px solid var(--gray-3);
+  }
+  .crit-num {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--gray-2);
+    text-stroke: 1px var(--gray-2);
+    line-height: 1;
+    transition: -webkit-text-stroke 0.5s var(--ease), color 0.5s var(--ease);
+  }
+  .crit:hover .crit-num { color: var(--white); -webkit-text-stroke: 1px var(--white); }
+  .crit-title { font-size: var(--h2); font-weight: 600; letter-spacing: -0.015em; margin: 0; }
+  .crit-desc { margin: 12px 0 0; max-width: 46ch; }
+
+  /* PULL-QUOTE */
+  .pq {
+    padding: clamp(70px, 14vh, 170px) 0;
+    display: flex;
+    justify-content: center;
+  }
+  .pq .wrap { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .pq-mark {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 0 0 9px rgba(255,255,255,0.06);
+    margin-bottom: clamp(30px, 5vh, 54px);
+  }
+  .pq-text {
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin: 0;
+    max-width: 20ch;
+    text-wrap: balance;
+  }
+
+  /* FIM */
+  .end { padding-bottom: clamp(28px, 4vh, 44px); }
+  .cta-wrap { margin: 0 0 clamp(60px, 10vh, 130px); }
+  .foot-meta { font-size: var(--label); text-transform: uppercase; letter-spacing: 0.16em; }
+
+  @media (max-width: 860px) {
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .cat-grid { grid-template-columns: 1fr; }
+    .crit { grid-template-columns: 1fr; gap: 10px; }
+    .crit-num { font-size: 1.4rem; }
+  }
+</style>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/celestial.js"></script>
+<script>
+  (function () {
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('is-scrolled', (window.scrollY || 0) > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  (function () {
+    const els = Array.from(document.querySelectorAll('.reveal'));
+    const inView = (el) => {
+      const r = el.getBoundingClientRect();
+      return r.top < (window.innerHeight || 0) * 0.95 && r.bottom > 0;
+    };
+    requestAnimationFrame(() => els.forEach(e => { if (inView(e)) e.classList.add('in'); }));
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      els.forEach(e => { if (!e.classList.contains('in')) io.observe(e); });
+    } else {
+      els.forEach(e => e.classList.add('in'));
+    }
+    window.addEventListener('load', () => setTimeout(() => els.forEach(e => e.classList.add('in')), 400));
+  })();
+</script>
+
+</body>
+</html>

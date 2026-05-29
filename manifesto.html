@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A7C · Manifesto</title>
+<meta name="description" content="O manifesto da A7C — capital com alma, contado pelo movimento dos corpos celestes." />
+<link rel="stylesheet" href="assets/system.css" />
+</head>
+<body class="mani">
+
+<!-- NAV global -->
+<header class="nav" id="nav">
+  <a href="index.html" class="wordmark" aria-label="A7C — início">A7C</a>
+  <nav class="nav-center" aria-label="Navegação principal">
+    <ul class="nav-links">
+      <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="tese.html" data-i18n="nav.thesis">Tese</a></li>
+      <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+      <li><a href="manifesto.html" class="is-active" data-i18n="nav.manifesto">Manifesto</a></li>
+      <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Idioma"></div>
+  </div>
+</header>
+
+<!-- Sequência de cenas (dirigida por scroll) -->
+<section class="scenes" id="scenes">
+  <div class="stage">
+    <canvas id="mani-canvas" aria-hidden="true"></canvas>
+    <div class="mani-head">
+      <span class="mani-eyebrow" id="maniKicker">MANIFESTO · 01 / 07</span>
+      <h1 id="mani-line" class="mani-title" aria-live="polite"></h1>
+      <p id="mani-sub" class="mani-sub"></p>
+    </div>
+    <div id="dots" class="scene-dots" aria-hidden="true"></div>
+    <div id="scrollHint" class="scroll-hint-m">
+      <span data-i18n="hero.scroll">Role</span>
+      <span class="arrowdown" aria-hidden="true">↓</span>
+    </div>
+  </div>
+</section>
+
+<!-- Rodapé global (aparece ao fim da jornada) -->
+<footer class="mani-end">
+  <div class="wrap">
+    <p class="end-quote" data-i18n="hero.line1">Capital com alma.</p>
+    <div class="foot">
+      <div class="dotline">
+        <span class="wordmark" style="font-size:.78rem">A7C</span>
+        <span class="dot">·</span><span>São Paulo</span>
+        <span class="dot">·</span><span>Milano</span>
+        <span class="dot">·</span><a href="mailto:contato@a7c.io">contato@a7c.io</a>
+      </div>
+      <div class="foot-meta">
+        <span data-i18n="foot.venus" class="muted">Vênus orbita ao contrário — assim como nós.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  body.mani { background: var(--black); }
+  .mani .nav { background: transparent; border-bottom: 0; }
+  .mani .nav.is-scrolled { background: rgba(0,0,0,0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+  /* secção alta cuja altura é definida via JS; palco fica fixo (pin) */
+  .scenes { position: relative; }
+  .stage {
+    position: sticky; top: 0;
+    height: 100vh; height: 100svh;
+    overflow: hidden;
+  }
+  #mani-canvas { position: absolute; inset: 0; z-index: 0; display: block; }
+
+  /* título gigante fundido à cena (pode atravessar os corpos) */
+  .mani-head {
+    position: absolute; top: clamp(84px, 13vh, 150px); left: 0; right: 0;
+    z-index: 3; text-align: center; pointer-events: none;
+    padding-inline: clamp(20px, 5vw, 60px);
+  }
+  .mani-eyebrow {
+    display: block; font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--gray-1); margin-bottom: 18px; font-weight: 500;
+  }
+  .mani-title {
+    margin: 0 auto; max-width: 18ch;
+    font-weight: 800; letter-spacing: -0.025em; line-height: 0.96;
+    font-size: clamp(2.4rem, 7vw, 6rem);
+    color: #fff;
+    text-shadow: 0 2px 50px rgba(0,0,0,0.55), 0 0 3px rgba(0,0,0,0.45);
+    text-wrap: balance;
+  }
+  .mani-title .word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+  .mani-title .inner {
+    display: inline-block; transform: translateY(118%); opacity: 0;
+    transition: transform 0.8s var(--ease), opacity 0.8s var(--ease);
+    will-change: transform, opacity;
+  }
+  .mani-title.in .inner { transform: translateY(0); opacity: 1; }
+  .mani-title.out .inner { transform: translateY(-118%); opacity: 0; transition-duration: 0.55s; transition-delay: 0s !important; }
+  .mani-sub {
+    margin: clamp(16px,2.4vh,26px) auto 0; max-width: 42ch;
+    font-size: clamp(0.95rem, 1.5vw, 1.3rem); font-weight: 400; line-height: 1.4;
+    color: #cfcfcf; letter-spacing: 0.01em;
+    opacity: 0; transform: translateY(10px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); transition-delay: 0.25s;
+    text-shadow: 0 0 30px rgba(0,0,0,0.6);
+  }
+  .mani-sub.in { opacity: 1; transform: none; }
+  .mani-sub.out { opacity: 0; transform: translateY(-8px); transition-delay: 0s; }
+
+  /* indicador de cenas */
+  .scene-dots {
+    position: absolute; z-index: 3;
+    right: clamp(20px, 3vw, 40px); top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .scene-dot { width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gray-2); transition: background .4s var(--ease), border-color .4s var(--ease), transform .4s var(--ease); }
+  .scene-dot.on { background: var(--white); border-color: var(--white); transform: scale(1.25); }
+
+  /* dica de scroll (some ao iniciar) */
+  .scroll-hint-m {
+    position: absolute; z-index: 3; left: 50%; bottom: clamp(26px, 5vh, 48px);
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    font-size: var(--label); text-transform: uppercase; letter-spacing: 0.26em; color: var(--gray-1);
+    transition: opacity .6s var(--ease);
+  }
+  .scroll-hint-m .arrowdown { animation: bob 2.4s var(--ease) infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0); opacity:.5 } 50% { transform: translateY(6px); opacity:1 } }
+
+  /* rodapé final */
+  .mani-end { position: relative; z-index: 2; background: var(--black); padding: clamp(70px,16vh,180px) 0 clamp(28px,4vh,44px); border-top: 1px solid var(--gray-3); }
+  .end-quote { font-size: clamp(1.8rem, 5vw, 3.4rem); font-weight: 600; letter-spacing: -0.025em; margin: 0 0 clamp(50px,9vh,110px); }
+  .foot-meta { font-size: var(--label); text-transform: uppercase; letter-spacing: 0.16em; }
+
+  @media (max-width: 760px) {
+    .mani-title { font-size: clamp(2rem, 9vw, 3.4rem); max-width: none; }
+    .mani-head { top: clamp(74px, 11vh, 120px); padding-inline: 20px; }
+    .scene-dots { right: 12px; gap: 9px; }
+    .mani-sub { font-size: 0.92rem; }
+    .end-quote { font-size: clamp(1.4rem, 6vw, 2.4rem); }
+  }
+  @media (max-width: 400px) {
+    .mani-eyebrow { font-size: 9px; letter-spacing: 0.22em; }
+    .mani-title { font-size: clamp(1.7rem, 10vw, 2.4rem); line-height: 1.02; }
+    .scroll-hint-m { font-size: 9px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mani-title .inner { transform: none; transition: opacity .5s var(--ease); }
+    .mani-title.out .inner { transform: none; }
+    .scroll-hint-m .arrowdown { animation: none; }
+  }
+</style>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/manifesto-scenes.js"></script>
+<script>
+  (function () {
+    const nav = document.getElementById('nav');
+    const hint = document.getElementById('scrollHint');
+    const onScroll = () => {
+      const y = window.scrollY || 0;
+      nav.classList.toggle('is-scrolled', y > 24);
+      if (hint) hint.style.opacity = y > 40 ? '0' : '1';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A7C · Contato</title>
+<meta name="description" content="Fale com a A7C — founders, sócios investidores e parceiros institucionais." />
+<link rel="stylesheet" href="assets/system.css" />
+</head>
+<body>
+
+<canvas id="celestial" aria-hidden="true"></canvas>
+
+<!-- NAV global -->
+<header class="nav" id="nav">
+  <a href="index.html" class="wordmark" aria-label="A7C — início">A7C</a>
+  <nav class="nav-center" aria-label="Navegação principal">
+    <ul class="nav-links">
+      <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="tese.html" data-i18n="nav.thesis">Tese</a></li>
+      <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+      <li><a href="manifesto.html" data-i18n="nav.manifesto">Manifesto</a></li>
+      <li><a href="contato.html" class="is-active" data-i18n="nav.contact">Contato</a></li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Idioma"></div>
+  </div>
+</header>
+
+<main class="shell">
+
+  <section class="ct">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="nav.contact">Contato</p>
+      <h1 class="display reveal ct-title" data-i18n="ct.title">Vamos conversar.</h1>
+      <p class="lead reveal ct-lead" data-i18n="ct.lead">Três caminhos. Uma conversa.</p>
+
+      <div class="paths">
+        <a class="path reveal" href="mailto:contato@a7c.io?subject=Founders">
+          <span class="path-idx">01</span>
+          <span class="path-orb" aria-hidden="true"></span>
+          <span class="path-who" data-i18n="ct.1.who">Founders</span>
+          <span class="path-act">
+            <span class="arrow">→</span>
+            <span data-i18n="ct.1.act">Apresente sua empresa</span>
+          </span>
+        </a>
+
+        <a class="path reveal" href="mailto:contato@a7c.io?subject=Socios%20investidores">
+          <span class="path-idx">02</span>
+          <span class="path-orb" aria-hidden="true"></span>
+          <span class="path-who" data-i18n="ct.2.who">Sócios investidores</span>
+          <span class="path-act">
+            <span class="arrow">→</span>
+            <span data-i18n="ct.2.act">Saiba mais sobre as condições</span>
+          </span>
+        </a>
+
+        <a class="path reveal" href="mailto:contato@a7c.io?subject=Parceiros%20institucionais">
+          <span class="path-idx">03</span>
+          <span class="path-orb" aria-hidden="true"></span>
+          <span class="path-who" data-i18n="ct.3.who">Parceiros institucionais</span>
+          <span class="path-act">
+            <span class="arrow">→</span>
+            <span data-i18n="ct.3.act">Vamos nos apresentar</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="ct-direct reveal">
+        <a class="cta cta--ghost" href="mailto:contato@a7c.io">
+          <span class="arrow">→</span>
+          <span>contato@a7c.io</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="wrap">
+      <footer class="foot">
+        <div class="dotline">
+          <span class="wordmark" style="font-size:.78rem">A7C</span>
+          <span class="dot">·</span><span>São Paulo</span>
+          <span class="dot">·</span><span>Milano</span>
+          <span class="dot">·</span><a href="mailto:contato@a7c.io">contato@a7c.io</a>
+        </div>
+        <div class="foot-meta">
+          <span data-i18n="foot.venus" class="muted">Vênus orbita ao contrário — assim como nós.</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<style>
+  .ct {
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: clamp(130px, 20vh, 220px);
+    padding-bottom: clamp(50px, 8vh, 100px);
+  }
+  .ct-title { margin-top: clamp(18px, 3vh, 32px); }
+  .ct-lead { margin-top: clamp(20px, 3vh, 32px); }
+
+  .paths {
+    margin-top: clamp(44px, 7vh, 84px);
+    border-top: 1px solid var(--gray-3);
+  }
+  .path {
+    position: relative;
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    align-items: center;
+    gap: clamp(16px, 3vw, 44px);
+    padding: clamp(26px, 4vh, 44px) 4px;
+    border-bottom: 1px solid var(--gray-3);
+    transition: padding-left 0.55s var(--ease), background 0.55s var(--ease);
+  }
+  .path:hover { padding-left: 18px; background: #060606; }
+  .path-idx {
+    font-size: var(--label); letter-spacing: 0.22em; color: var(--gray-2);
+    font-variant-numeric: tabular-nums;
+  }
+  .path-who {
+    font-size: clamp(1.5rem, 3vw, 2.6rem);
+    font-weight: 600; letter-spacing: -0.02em; line-height: 1.05;
+  }
+  .path-act {
+    display: inline-flex; align-items: baseline; gap: 0.6em;
+    font-size: var(--label); text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--gray-1); white-space: nowrap;
+    transition: color 0.4s var(--ease), gap 0.55s var(--ease);
+  }
+  .path-act .arrow { transition: transform 0.55s var(--ease); }
+  .path:hover .path-act { color: var(--white); gap: 1em; }
+  .path:hover .path-act .arrow { transform: translateX(4px); }
+
+  /* corpo celeste que surge no hover */
+  .path-orb {
+    position: absolute; left: -1px; top: 50%;
+    width: 8px; height: 8px; margin-top: -4px; border-radius: 50%;
+    background: var(--white);
+    transform: scale(0); opacity: 0;
+    transition: transform 0.5s var(--ease), opacity 0.5s var(--ease);
+  }
+  .path:hover .path-orb { transform: scale(1); opacity: 1; }
+
+  .ct-direct { margin-top: clamp(40px, 6vh, 72px); }
+
+  .end { padding: clamp(40px,7vh,90px) 0 clamp(28px, 4vh, 44px); }
+  .foot-meta { font-size: var(--label); text-transform: uppercase; letter-spacing: 0.16em; }
+
+  @media (max-width: 680px) {
+    .path { grid-template-columns: 40px 1fr; row-gap: 12px; }
+    .path-act { grid-column: 1 / -1; }
+  }
+</style>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/celestial.js"></script>
+<script>
+  (function () {
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('is-scrolled', (window.scrollY || 0) > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  (function () {
+    const els = Array.from(document.querySelectorAll('.reveal'));
+    const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight||0)*0.95 && r.bottom > 0; };
+    requestAnimationFrame(() => els.forEach(e => { if (inView(e)) e.classList.add('in'); }));
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      els.forEach(e => { if (!e.classList.contains('in')) io.observe(e); });
+    } else { els.forEach(e => e.classList.add('in')); }
+    window.addEventListener('load', () => setTimeout(() => els.forEach(e => e.classList.add('in')), 400));
+  })();
+</script>
+
+</body>
+</html>
